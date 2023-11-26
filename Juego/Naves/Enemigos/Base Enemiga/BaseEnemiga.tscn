@@ -162,7 +162,7 @@ tracks/2/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[node name="BaseEnemiga" type="Node2D"]
+[node name="BaseEnemiga" type="Node2D" groups=["minimap"]]
 z_index = 41
 script = ExtResource( 7 )
 orbital = ExtResource( 12 )
