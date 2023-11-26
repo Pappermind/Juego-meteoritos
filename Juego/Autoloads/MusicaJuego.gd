@@ -13,7 +13,7 @@ func get_lista_musicas() -> Dictionary:
 
 ##Atributos Export
 export var tiempo_transcion:float = 4.0
-export(float, -50.0, -20.0, 5.0) var volumen_apagado = -40.0
+export(float, -50.0, -20.0, 5.0) var volumen_apagado = -80.0
 
 ##Atributos
 var vol_original_musica_off: float = 0.0

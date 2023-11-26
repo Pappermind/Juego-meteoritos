@@ -27,7 +27,7 @@ sector_meteoritos = ExtResource( 8 )
 tiempo_tansicion_camara = 0.5
 enemigo_interceptor = ExtResource( 9 )
 rele_masa = ExtResource( 5 )
-tiempo_limite = 30
+tiempo_limite = 120
 musica_nivel = ExtResource( 17 )
 musica_combate = ExtResource( 16 )
 
