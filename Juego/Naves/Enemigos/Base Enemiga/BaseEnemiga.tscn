@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Juego/Naves/Enemigos/Base Enemiga/Spritebase3.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/Enemigos/Base Enemiga/Spritebase2.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Juego/Naves/Enemigos/Base Enemiga/RutaEnemigo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Juego/Naves/Enemigos/Enemigo Orbital/NaveOrbital.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Juego/Naves/Enemigos/Base Enemiga/rutaEnemigo2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Juego/Naves/BarraSalud.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 50.9028
@@ -46,19 +47,19 @@ resource_name = "Movimiento_pendulo"
 length = 5.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprites:rotation_degrees")
+tracks/0/path = NodePath("AreaAtraccion/SpriteZonaRecarga:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.4, 2.7, 4, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 90.0, -90.0, -180.0, 0.0 ]
+"values": [ Color( 0.760784, 0.737255, 0.129412, 0.145098 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AreaColision:rotation_degrees")
+tracks/1/path = NodePath(".:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -69,53 +70,44 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0.0, 90.0, -90.0, -180.0, 0.0 ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AreaAtraccion/SpriteZonaRecarga:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.760784, 0.737255, 0.129412, 0.145098 ) ]
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=6]
 length = 5.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprites:rotation_degrees")
+tracks/0/path = NodePath("AreaAtraccion/SpriteZonaRecarga:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -360.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AreaAtraccion/SpriteZonaRecarga:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0.760784, 0.737255, 0.129412, 0.145098 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AreaColision:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -126,41 +118,47 @@ tracks/2/keys = {
 length = 5.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprites:rotation_degrees")
+tracks/0/path = NodePath("AreaAtraccion/SpriteZonaRecarga:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 360.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AreaAtraccion/SpriteZonaRecarga:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0.760784, 0.737255, 0.129412, 0.145098 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AreaColision:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 360.0 ]
 }
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.403922, 0.0352941, 0.603922, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 0.145098, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
 
 [node name="BaseEnemiga" type="Node2D" groups=["minimap"]]
 z_index = 41
@@ -224,6 +222,7 @@ visible = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Default = SubResource( 4 )
 anims/Movimiento_pendulo = SubResource( 5 )
+anims/RESET = SubResource( 10 )
 anims/rotacion_antihorario = SubResource( 6 )
 anims/rotacion_horario = SubResource( 7 )
 
@@ -249,6 +248,16 @@ position = Vector2( 400, 0 )
 position = Vector2( -400, 0 )
 
 [node name="TimerSpawnerEnemigos" type="Timer" parent="."]
+
+[node name="BarraSalud" parent="." instance=ExtResource( 14 )]
+margin_left = -104.0
+margin_top = -293.0
+margin_right = 110.0
+margin_bottom = -266.0
+rect_rotation = 0.0
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+siempre_visible = true
 
 [connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Juego/Naves/Estaciones/Estacion Recarga/SpriteEstacion.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/Estaciones/Estacion Recarga/AreaAtraccion.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego/Naves/Estaciones/Estacion Recarga/vacio.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Juego/Naves/Estaciones/Estacion Recarga/recarga.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Juego/Naves/Estaciones/Estacion Recarga/EstacionRecarga.gd" type="Script" id=5]
+[ext_resource path="res://Juego/UI/Kenney Future2.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 120.392
@@ -91,6 +92,19 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="DynamicFont" id=4]
+size = 27
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.415686, 0.729412, 0.0431373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.486275, 0, 0, 1 )
+
 [node name="EstacionRecarga" type="Node2D" groups=["minimap"]]
 z_index = 41
 script = ExtResource( 5 )
@@ -122,6 +136,16 @@ bus = "SFX"
 [node name="VacioSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 bus = "SFX"
+
+[node name="BarraEnergia" type="ProgressBar" parent="."]
+margin_left = -148.801
+margin_top = -323.154
+margin_right = 151.199
+margin_bottom = -288.154
+custom_fonts/font = SubResource( 4 )
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+value = 50.0
 
 [connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]
 [connection signal="body_entered" from="AreaRecarga" to="." method="_on_AreaRecarga_body_entered"]
