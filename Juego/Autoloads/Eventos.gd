@@ -11,6 +11,7 @@ signal nivel_iniciado()
 signal nivel_terminado()
 signal detecto_zona_recarga(entrando)
 signal cambio_numero_meteoritos(numero)
+signal nivel_completado()
 ##HUD
 signal actualizar_tiempo(tiempo_restante)
 signal cambio_energia_laser(energia_max, energia_actual)
