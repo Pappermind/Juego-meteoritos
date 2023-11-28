@@ -13,7 +13,7 @@ func get_lista_musicas() -> Dictionary:
 
 ##Atributos Export
 export var tiempo_transcion:float = 4.0
-export(float, -50.0, -20.0, 5.0) var volumen_apagado = -80.0
+export(float, -80.0, -20.0, 5.0) var volumen_apagado = -80.0
 
 ##Atributos
 var vol_original_musica_off: float = 0.0
@@ -60,7 +60,7 @@ func fade_out(musica_fade_out:AudioStreamPlayer) -> void:
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN_OUT
 	)
-	tween_on.start()
+	tween_off.start()
 
 func set_streams(stream_musica:AudioStream, stream_combate:AudioStream) -> void:
 	musica_nivel.stream = stream_musica
@@ -74,6 +74,8 @@ func stop_todo() -> void:
 	for nodo in get_children():
 		if nodo is AudioStreamPlayer:
 			nodo.stop()
+
+
 
 
 func _on_TweenMusicaOff_tween_all_completed(object: Object, _key: NodePath) -> void:

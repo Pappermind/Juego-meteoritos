@@ -70,6 +70,7 @@ func crear_contenedores() -> void:
 	add_child(contenedor_enemigos)
 
 func destruir_nivel() -> void:
+# warning-ignore:narrowing_conversion
 	crear_explosion(
 		player.global_position,
 		8.0,
@@ -148,6 +149,9 @@ func crear_posicion_aleatoria(rango_horizontal:float, rango_vertical:float) -> V
 	
 	return Vector2 (rand_x,rand_y)
 
+# warning-ignore:unused_argument
+# warning-ignore:shadowed_variable
+# warning-ignore:unused_argument
 func transicion_camaras(desde: Vector2, hasta: Vector2, camara_actual:Camera2D, tiempo_transicion_camara: float) -> void:
 	$TweenCamara.interpolate_property(
 		camara_actual,
@@ -190,6 +194,7 @@ func _on_base_destruida(_base, pos_partes: Array) -> void:
 		crear_rele() 
 
 func crear_explosion(
+# warning-ignore:unused_argument
 	posicion: Vector2,
 	num_explosiones: int = 1,
 	intervalo: float = 0.0,
@@ -224,6 +229,7 @@ func _on_spawn_meteoritos(pos_spawn: Vector2, dir_meteorito: Vector2, tamanio: f
  
 
 
+# warning-ignore:unused_argument
 func _on_TweenCamara_tween_completed(object: Object, key: NodePath) -> void:
 	if object.name == "CamaraPlayer":
 		object.global_position = $Player.global_position

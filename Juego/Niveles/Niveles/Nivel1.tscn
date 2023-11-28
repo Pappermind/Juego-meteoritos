@@ -13,6 +13,6 @@ tipo_peligro = "Enemigo"
 numero_peligros = 2
 
 [node name="BaseEnemiga" parent="ContenedorBaseEnemiga" index="0" instance=ExtResource( 2 )]
-position = Vector2( -670.713, -409.087 )
+position = Vector2( 879.266, -1184.08 )
 
 [editable path="StarFieldBackground"]
